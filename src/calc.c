@@ -8,11 +8,13 @@
 #include <string.h>
 #include "roman.h"
 
-void usage(char** argv) {
+
+void usage(char **argv)
+{
 	printf("Usage: %s [+|-] RomanNumeral RomanNumeral\n", argv[0]);
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	if (4 != argc) {
 		usage(argv);
@@ -23,22 +25,22 @@ int main(int argc, char** argv)
 	int a = roman_to_arabic(argv[2]);
 	int b = roman_to_arabic(argv[3]);
 	if (0 >= a || 0 >= b) {
-		printf("Invalid Roman Numeral\n");
+		puts("Invalid Roman Numeral");
 		return 1;
 	}
 
 	if (0 == strncmp("+", argv[1], 1)) {
-		if (0 != arabic_to_roman(a+b, &r)) {
-			printf("Failed to preform the addition\n");
+		if (0 != arabic_to_roman(a + b, &r)) {
+			puts("Failed to preform the addition");
 			return 1;
 		}
 	} else if (0 == strncmp("-", argv[1], 1)) {
-		if (0 != arabic_to_roman(b-a, &r)) {
-			printf("Failed to preform the subtraction\n");
+		if (0 != arabic_to_roman(b - a, &r)) {
+			puts("Failed to preform the subtraction");
 			return 1;
 		}
 	} else {
-		printf("Unknown operation\n");
+		puts("Unknown operation");
 		usage(argv);
 		return 1;
 	}

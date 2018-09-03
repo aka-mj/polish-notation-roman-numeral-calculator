@@ -5,7 +5,7 @@
 #define MAX_ROMAN_LENGTH 9
 
 typedef char* roman_t;
-typedef uint arabic_t;
+typedef unsigned int arabic_t;
 
 int arabic_to_roman(arabic_t a, roman_t* r);
 int roman_to_arabic(const roman_t r);

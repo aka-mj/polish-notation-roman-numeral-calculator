@@ -59,13 +59,14 @@ int arabic_to_roman(arabic_t a, roman_t* r)
 	return 0;
 }
 
-// Match a passed roman numeral to one in the mapped list.
+// See if we can match rmn with a roman numeral in rmap, len specifies how
+// many elements in rmn we should be looking at.
 // Returns its arabic value, negative value returned if no match was found.
-int match(const roman_t rmn)
+int match(const roman_t rmn, size_t len)
 {
 	int idx;
 	for (idx = 0; idx < MAP_ELEM_LENGTH; idx++) {
-		if (0 == strcmp(rmap[idx].roman, rmn))
+		if (0 == strncmp(rmap[idx].roman, rmn, len))
 			return rmap[idx].arabic;
 	}
 	return -1;
@@ -77,14 +78,12 @@ int roman_to_arabic(const roman_t r)
 {
 	arabic_t a = 0; //initial arabic value
 	int idx = 0; //initial start index
+	int m = 0; //initial match value
 
 	do {
 		// Try to match next two roman numeral characters
 		if (2 <= strlen((char*)r)-idx) {
-			roman_t slice = calloc(2, sizeof(roman_t));
-			strncpy((char*)slice, &r[idx], 2);
-			int m = match(slice);
-			free(slice);
+			m = match(&r[idx], 2);
 			if (0 < m) {
 				a = a + m;
 				idx = idx + 2;
@@ -92,10 +91,7 @@ int roman_to_arabic(const roman_t r)
 			}
 		}
 		// Couldn't find match, try just first character
-		roman_t slice = calloc(2, sizeof(roman_t));
-		strncpy((char*)slice, &r[idx], 1);
-		int m = match(slice);
-		free(slice);
+		m = match(&r[idx], 1);
 		if (0 < m) {
 			a = a + m;
 			idx++;
