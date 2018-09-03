@@ -11,15 +11,14 @@ Written for this coding exercise: http://codingdojo.org/cgi-bin/index.pl?KataRom
     make
     make test
 
-## Check Unit Testing
+## Unity Unit Testing
 
-The check unit testing framework is used. https://libcheck.github.io/check/
+The Unity unit testing framework is used. https://www.throwtheswitch.org/unity
 
-    Running suite(s): arabic_to_roman
-     roman_to_arabic
-     addition
-     subtraction
-    100%: Checks: 70, Failures: 0, Errors: 0
+    ....
+    -----------------------
+    70 Tests 0 Failures 0 Ignored 
+    OK
 
 
 ## Calculator
@@ -36,5 +35,6 @@ The check unit testing framework is used. https://libcheck.github.io/check/
 
 ### Built and Tested on
 
+ * Kubuntu 18.04
  * GNU Make 4.1
- * Ubuntu 14.04 and 16.04 x86_64
+ * GCC 7.2.0 and Clang 5.0

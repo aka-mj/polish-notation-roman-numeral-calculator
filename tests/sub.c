@@ -1,70 +1,56 @@
 #include <stdlib.h>
-#include <check.h>
-#include "../src/roman.h"
+#include "unity.h"
+#include "roman.h"
+#include "sub.h"
 
-START_TEST(sub_I_II)
+void test_sub_I_II(void)
 {
 	roman_t r; //final roman numeral
 	int a = roman_to_arabic("I");
 	int b = roman_to_arabic("II");
-	ck_assert_int_eq(0, arabic_to_roman(b-a, &r));
-	ck_assert_str_eq("I", (char*)r);
+	TEST_ASSERT_EQUAL_INT(0, arabic_to_roman(b-a, &r));
+	TEST_ASSERT_EQUAL_STRING("I", (char*)r);
 }
-END_TEST
 
-START_TEST(sub_I_V)
+void test_sub_I_V(void)
 {
 	roman_t r; //final roman numeral
 	int a = roman_to_arabic("I");
 	int b = roman_to_arabic("V");
-	ck_assert_int_eq(0, arabic_to_roman(b-a, &r));
-	ck_assert_str_eq("IV", (char*)r);
+	TEST_ASSERT_EQUAL_INT(0, arabic_to_roman(b-a, &r));
+	TEST_ASSERT_EQUAL_STRING("IV", (char*)r);
 }
-END_TEST
 
-START_TEST(sub_I_VI)
+void test_sub_I_VI(void)
 {
 	roman_t r; //final roman numeral
 	int a = roman_to_arabic("I");
 	int b = roman_to_arabic("VI");
-	ck_assert_int_eq(0, arabic_to_roman(b-a, &r));
-	ck_assert_str_eq("V", (char*)r);
+	TEST_ASSERT_EQUAL_INT(0, arabic_to_roman(b-a, &r));
+	TEST_ASSERT_EQUAL_STRING("V", (char*)r);
 }
-END_TEST
 
-START_TEST(sub_failure_zero)
+void test_sub_failure_zero(void)
 {
 	roman_t r; //final roman numeral
 	int a = roman_to_arabic("I");
 	int b = roman_to_arabic("I");
-	ck_assert_int_eq(-1, arabic_to_roman(b-a, &r));
+	TEST_ASSERT_EQUAL_INT(-1, arabic_to_roman(b-a, &r));
 }
-END_TEST
 
-START_TEST(sub_failure_negative)
+void test_sub_failure_negative(void)
 {
 	roman_t r; //final roman numeral
 	int a = roman_to_arabic("V");
 	int b = roman_to_arabic("I");
-	ck_assert_int_eq(-1, arabic_to_roman(b-a, &r));
+	TEST_ASSERT_EQUAL_INT(-1, arabic_to_roman(b-a, &r));
 }
-END_TEST
 
-/* Tests our ability to preform subtraction */
-Suite* check_subtraction(void)
+void run_tests_subtraction(void)
 {
-	Suite* s;
-	TCase* tc;
-
-	s = suite_create("subtraction");
-	tc = tcase_create("sub");
-
-	tcase_add_test(tc, sub_I_II);
-	tcase_add_test(tc, sub_I_V);
-	tcase_add_test(tc, sub_I_VI);
-	tcase_add_test(tc, sub_failure_zero);
-	tcase_add_test(tc, sub_failure_negative);
-
-	suite_add_tcase(s, tc);
-	return s;
+	RUN_TEST(test_sub_I_II);
+	RUN_TEST(test_sub_I_V);
+	RUN_TEST(test_sub_I_VI);
+	RUN_TEST(test_sub_failure_zero);
+	RUN_TEST(test_sub_failure_negative);
 }

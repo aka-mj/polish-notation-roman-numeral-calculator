@@ -1,351 +1,315 @@
 #include <stdlib.h>
-#include <check.h>
-#include "../src/roman.h"
+#include "unity.h"
+#include "roman.h"
+#include "arabic2roman.h"
 
-START_TEST(a2r_1)
+void test_a2r_1(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(1, &r);
-	ck_assert_str_eq(r, "I");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "I");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_2)
+void test_a2r_2(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(2, &r);
-	ck_assert_str_eq(r, "II");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "II");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_3)
+void test_a2r_3(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(3, &r);
-	ck_assert_str_eq(r, "III");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "III");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_4)
+void test_a2r_4(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(4, &r);
-	ck_assert_str_eq(r, "IV");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "IV");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_5)
+void test_a2r_5(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(5, &r);
-	ck_assert_str_eq(r, "V");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "V");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_6)
+void test_a2r_6(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(6, &r);
-	ck_assert_str_eq(r, "VI");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "VI");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_7)
+void test_a2r_7(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(7, &r);
-	ck_assert_str_eq(r, "VII");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "VII");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_8)
+void test_a2r_8(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(8, &r);
-	ck_assert_str_eq(r, "VIII");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "VIII");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_9)
+void test_a2r_9(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(9, &r);
-	ck_assert_str_eq(r, "IX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "IX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_10)
+void test_a2r_10(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(10, &r);
-	ck_assert_str_eq(r, "X");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "X");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_11)
+void test_a2r_11(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(11, &r);
-	ck_assert_str_eq(r, "XI");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XI");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_15)
+void test_a2r_15(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(15, &r);
-	ck_assert_str_eq(r, "XV");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XV");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_19)
+void test_a2r_19(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(19, &r);
-	ck_assert_str_eq(r, "XIX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XIX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_20)
+void test_a2r_20(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(20, &r);
-	ck_assert_str_eq(r, "XX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_25)
+void test_a2r_25(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(25, &r);
-	ck_assert_str_eq(r, "XXV");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XXV");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_30)
+void test_a2r_30(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(30, &r);
-	ck_assert_str_eq(r, "XXX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XXX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_40)
+void test_a2r_40(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(40, &r);
-	ck_assert_str_eq(r, "XL");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XL");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_49)
+void test_a2r_49(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(49, &r);
-	ck_assert_str_eq(r, "XLIX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XLIX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_50)
+void test_a2r_50(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(50, &r);
-	ck_assert_str_eq(r, "L");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "L");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_90)
+void test_a2r_90(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(90, &r);
-	ck_assert_str_eq(r, "XC");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "XC");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_100)
+void test_a2r_100(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(100, &r);
-	ck_assert_str_eq(r, "C");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "C");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_400)
+void test_a2r_400(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(400, &r);
-	ck_assert_str_eq(r, "CD");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "CD");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_500)
+void test_a2r_500(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(500, &r);
-	ck_assert_str_eq(r, "D");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "D");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_900)
+void test_a2r_900(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(900, &r);
-	ck_assert_str_eq(r, "CM");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "CM");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_1000)
+void test_a2r_1000(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(1000, &r);
-	ck_assert_str_eq(r, "M");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "M");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_3999)
+void test_a2r_3999(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(3999, &r);
-	ck_assert_str_eq(r, "MMMCMXCIX");
-	ck_assert_int_eq(ret, 0);
+	TEST_ASSERT_EQUAL_STRING(r, "MMMCMXCIX");
+	TEST_ASSERT_EQUAL_INT(ret, 0);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_fail_large)
+void test_a2r_fail_large(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(4000, &r);
-	ck_assert_int_eq(ret, -1);
+	TEST_ASSERT_EQUAL_INT(ret, -1);
 	if (0 == ret) free(r);
 }
-END_TEST
 
-START_TEST(a2r_fail_zero)
+void test_a2r_fail_zero(void)
 {
 	roman_t r;
 	int ret;
 	ret = arabic_to_roman(0, &r);
-	ck_assert_int_eq(ret, -1);
+	TEST_ASSERT_EQUAL_INT(ret, -1);
 	if (0 == ret) free(r);
 }
-END_TEST
 
 /* Tests for arabic_to_roman to suite */
-Suite* check_a2r(void)
+void run_tests_arabic_to_roman(void)
 {
-	Suite* s;
-	TCase* tc;
-
-	s = suite_create("arabic_to_roman");
-	tc = tcase_create("a2r");
-
-	tcase_add_test(tc, a2r_1);
-	tcase_add_test(tc, a2r_2);
-	tcase_add_test(tc, a2r_3);
-	tcase_add_test(tc, a2r_4);
-	tcase_add_test(tc, a2r_5);
-	tcase_add_test(tc, a2r_6);
-	tcase_add_test(tc, a2r_7);
-	tcase_add_test(tc, a2r_8);
-	tcase_add_test(tc, a2r_9);
-	tcase_add_test(tc, a2r_10);
-	tcase_add_test(tc, a2r_11);
-	tcase_add_test(tc, a2r_15);
-	tcase_add_test(tc, a2r_19);
-	tcase_add_test(tc, a2r_20);
-	tcase_add_test(tc, a2r_25);
-	tcase_add_test(tc, a2r_30);
-	tcase_add_test(tc, a2r_40);
-	tcase_add_test(tc, a2r_49);
-	tcase_add_test(tc, a2r_50);
-	tcase_add_test(tc, a2r_90);
-	tcase_add_test(tc, a2r_100);
-	tcase_add_test(tc, a2r_400);
-	tcase_add_test(tc, a2r_500);
-	tcase_add_test(tc, a2r_900);
-	tcase_add_test(tc, a2r_1000);
-	tcase_add_test(tc, a2r_3999);
-	tcase_add_test(tc, a2r_fail_large);
-	tcase_add_test(tc, a2r_fail_zero);
-
-	suite_add_tcase(s, tc);
-	return s;
+	RUN_TEST(test_a2r_1);
+	RUN_TEST(test_a2r_2);
+	RUN_TEST(test_a2r_3);
+	RUN_TEST(test_a2r_4);
+	RUN_TEST(test_a2r_5);
+	RUN_TEST(test_a2r_6);
+	RUN_TEST(test_a2r_7);
+	RUN_TEST(test_a2r_8);
+	RUN_TEST(test_a2r_9);
+	RUN_TEST(test_a2r_10);
+	RUN_TEST(test_a2r_11);
+	RUN_TEST(test_a2r_15);
+	RUN_TEST(test_a2r_19);
+	RUN_TEST(test_a2r_20);
+	RUN_TEST(test_a2r_25);
+	RUN_TEST(test_a2r_30);
+	RUN_TEST(test_a2r_40);
+	RUN_TEST(test_a2r_49);
+	RUN_TEST(test_a2r_50);
+	RUN_TEST(test_a2r_90);
+	RUN_TEST(test_a2r_100);
+	RUN_TEST(test_a2r_400);
+	RUN_TEST(test_a2r_500);
+	RUN_TEST(test_a2r_900);
+	RUN_TEST(test_a2r_1000);
+	RUN_TEST(test_a2r_3999);
+	RUN_TEST(test_a2r_fail_large);
+	RUN_TEST(test_a2r_fail_zero);
 }
